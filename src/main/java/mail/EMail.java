@@ -1,5 +1,7 @@
 package mail;
 
+import Personne.Victim;
+
 import java.util.ArrayList;
 
 public class EMail {
@@ -9,7 +11,11 @@ public class EMail {
     private String subject;
     private String body;
 
-    public EMail(){}
+    public EMail(){};
+
+    public EMail(String from){
+        this.from = from;
+    }
 
     public EMail(String from, ArrayList<String> to){
         this.from = from;
@@ -17,18 +23,16 @@ public class EMail {
     }
 
     public EMail(String from, ArrayList<String> to, String subject, String body){
-        this.from = from;
-        this.to = to;
+        this(from, to);
         this.subject = subject;
         this.body = body;
     }
 
     public EMail(String from, ArrayList<String> to, ArrayList<String> cc, String subject, String body){
-        this.from = from;
-        this.to = to;
+
+        this(from, to, subject, body);
+
         this.cc = cc;
-        this.subject = subject;
-        this.body = body;
     }
 
     public void setFrom(String from) {
@@ -69,5 +73,13 @@ public class EMail {
 
     public String getBody(){
         return body;
+    }
+
+    public void addTo(String to){
+        this.to.add(to);
+    }
+
+    public void addCc(String cc){
+        this.cc.add(cc);
     }
 }
