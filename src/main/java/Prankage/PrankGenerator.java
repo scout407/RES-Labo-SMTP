@@ -74,15 +74,10 @@ public class PrankGenerator {
             String subject = messages.get(numMessage);
             String message = messages.get(numMessage + 1);
 
-            message += "\r\n";
             prank.setSubject(subject);
-
             prank.setBody(message);
-
             pranks.add(prank);
-
         }
-
         return pranks;
     }
 
