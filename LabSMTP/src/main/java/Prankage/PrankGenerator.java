@@ -2,18 +2,18 @@ package Prankage;
 
 import Personne.Group;
 import Personne.Victim;
+import config.ConfigManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-import java.util.logging.Logger;
-
-import static sun.font.LayoutPathImpl.LOG;
 
 public class PrankGenerator {
+    private ConfigManager cm;
 
-
-    public PrankGenerator(){};
+    public PrankGenerator(ConfigManager cm){
+        this.cm = cm;
+    }
 
 
     //génère les groups
@@ -42,15 +42,14 @@ public class PrankGenerator {
     public ArrayList<Prank> generatePranks(){
 
         ArrayList<Prank> pranks = new ArrayList<Prank>();
-        ArrayList<String> messages = configManager.getMessages();
-        ArrayList<Victim> victims = configManager.getVictims();
+        ArrayList<String> messages = cm.getMessages();
+        ArrayList<Victim> victims = cm.getVictims();
 
-        int nbrGroups = configManager.getNumberOfGroup();
+        int nbrGroups = cm.getNumberOfGroup();
         int nbrVictims = victims.size();
 
         if( nbrVictims / nbrGroups < 3){
             nbrGroups = nbrVictims / 3;
-            LOG.warning("Erreur pas assez de victime désigné ou trop de groupe \nvictims : "+ nbrVictims + " \nGroup generated : " + nbrGroups);
         }
 
         ArrayList<Group> groups = generateGroup(victims, nbrGroups);
@@ -68,7 +67,7 @@ public class PrankGenerator {
             prank.setSender(sender);
             prank.addTo(members);
 
-            prank.addCc(configManager.getWitnessToCC());
+            prank.addCc(cm.getWitnessToCC());
 
             numMessage = rand.nextInt(messages.size() / 2) * 2;
             String subject = messages.get(numMessage);

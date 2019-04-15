@@ -2,14 +2,12 @@ package mailbot;
 
 import config.ConfigManager;
 import mail.EMail;
-import Personne.Victim;
 import Prankage.Prank;
 import Prankage.PrankGenerator;
 import smtp.SmtpClient;
 import com.sun.istack.internal.logging.Logger;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 class MailBot{
@@ -32,8 +30,7 @@ class MailBot{
             EMail mail;
 
             for(Prank prank : pranks){
-                mail = prank.generateMail();
-                // Test body presence LOG.info(mail.getBody());
+                mail = prank.mailMaker();
                 client.sendMail(mail);
             }
         } catch (IOException ex){

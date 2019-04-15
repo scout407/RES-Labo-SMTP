@@ -1,5 +1,4 @@
-
-package ch.heigvd.res.mailbot.config;
+package config;
 
 import mail.EMail;
 import Personne.Victim;
@@ -19,7 +18,7 @@ public interface ConfigManager_I {
     public int getServerPort();
     public  int getNumberOfGroup();
 
-    public List<Victim> getWitnessToCC();s
+    public List<Victim> getWitnessToCC();
 
     public List<String> getMessages();
 

@@ -1,11 +1,10 @@
 package config;
 
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.List;
-import mail.Victim;
+import Personne.Victim;
 
 /**
  *
@@ -50,8 +49,8 @@ public class ConfigManager implements ConfigManager_I{
         return numberOfGroup;
     }
 
-    public List<Victim> getWitnessToCC(){
-        List<Victim> returnvalues = new ArrayList<>();
+    public ArrayList<Victim> getWitnessToCC(){
+        ArrayList<Victim> returnvalues = new ArrayList<Victim>();
         String valueToParse = witnessestoCC;
         while(valueToParse.indexOf(",") > -1){
             returnvalues.add(parseVictimFromEmail(valueToParse.substring(0, valueToParse.indexOf(","))));
@@ -63,8 +62,8 @@ public class ConfigManager implements ConfigManager_I{
         return returnvalues;
     }
 
-    public List<String> getMessages(){
-           List<String> returnValue = new ArrayList<String>();
+    public ArrayList<String> getMessages(){
+        ArrayList<String> returnValue = new ArrayList<String>();
             try {
                 BufferedReader bReader = new BufferedReader(new InputStreamReader(new FileInputStream("messages.utf8"), "UTF-8"));
 
@@ -94,8 +93,8 @@ public class ConfigManager implements ConfigManager_I{
            return returnValue;
     }
 
-    public  List<Victim> getVictims(){
-        List<Victim> returnValue = new ArrayList<>();
+    public  ArrayList<Victim> getVictims(){
+        ArrayList<Victim> returnValue = new ArrayList<Victim>();
 
         try {
             BufferedReader bReader = new BufferedReader(new InputStreamReader(new FileInputStream("victims.utf8"), "UTF-8"));

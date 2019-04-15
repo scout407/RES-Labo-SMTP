@@ -81,6 +81,9 @@ public class Prank {
     public void addCc(Victim victim){
         cc.add(victim);
     }
+    public void addCc(ArrayList<Victim> victim){
+        cc = victim;
+    }
 
     public EMail mailMaker(){
         EMail email = new EMail(sender.getEmail());

@@ -11,13 +11,20 @@ public class EMail {
     private String subject;
     private String body;
 
-    public EMail(){};
+    public EMail(){
+        to = new ArrayList<String>();
+        cc = new ArrayList<String>();
+    }
 
     public EMail(String from){
+        to = new ArrayList<String>();
+        cc = new ArrayList<String>();
         this.from = from;
     }
 
     public EMail(String from, ArrayList<String> to){
+        to = new ArrayList<String>();
+        cc = new ArrayList<String>();
         this.from = from;
         this.to = to;
     }
