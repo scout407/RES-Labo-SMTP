@@ -22,7 +22,7 @@ Pour configManager il faut messages.utf8 pour les messages et victims.utf8 pour 
 Pour message.utf8
   - Pour mettre un sujet il faut placer Subject: \<le sujet\> 
   - Ensuite écrire le body directement après et laissé une ligne vide pour la fin  
-  - Ne lit pas les ligne vide
+  - Ne lit pas les lignes vide
   
 Pour victim.utf8
   - Juste une adresse email par ligne
