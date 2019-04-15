@@ -8,11 +8,11 @@ Dans ce dépos se trouve le laboratoire SMTP pour le cours de RES.
 Le but de ce laboratoire est de pouvoir envoyé des faux mails à des personnes en se faisant passé pour une autre personne (mail forgé)
 
 Les classe pemettant de gérer la création du mail sont :
-  Victim, EMail et group permettant de réalisé les groupes de personnes qui recevrons le mail
-  Prank permet de générer le spam email
-  PrankGenerator permet de créer les groupes (avec celui qui envoie et ceux qui reçoivent)
-  ConfigManager lui permet de géréer les listes des personnes et des messages
-  SmtpClient lui est utilisé pour se connecter aux serveur et envoyé les messages
+  - Victim, EMail et group permettant de réalisé les groupes de personnes qui recevrons le mail
+  - Prank permet de générer le spam email
+  - PrankGenerator permet de créer les groupes (avec celui qui envoie et ceux qui reçoivent) 
+  - ConfigManager lui permet de géréer les listes des personnes et des messages
+  - SmtpClient lui est utilisé pour se connecter aux serveur et envoyé les messages
 
 
 
@@ -20,12 +20,12 @@ Les classe pemettant de gérer la création du mail sont :
 Pour configManager il faut messages.utf8 pour les messages et victims.utf8 pour la liste des victimes
 
 Pour message.utf8
-  Pour mettre un sujet il faut placer Subject: <le sujet>
-  Ensuite écrire le body directement après et laissé une ligne vide pour la fin
-  Ne lit pas les ligne vide
+  - Pour mettre un sujet il faut placer Subject: <le sujet> 
+  - Ensuite écrire le body directement après et laissé une ligne vide pour la fin  
+  - Ne lit pas les ligne vide
   
 Pour victim.utf8
-  Juste une adresse email par ligne
+  - Juste une adresse email par ligne
   
 # Docker et MockMock
 
