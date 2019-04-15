@@ -38,5 +38,6 @@ Build le docker avec la commande : ```docker build -t mock-smtp-server . ```
 Ensuite le lancé avec : ```docker run -p 8282:8282 -p 2525:2525 mock-smtp-server ```
 
 Maintenant que le serveur est lancé il suffit juste de build et lancé le programme avec les configs indiqué.
+C'est dans le fichier config.properties qu'il faut entrer l'adresse du docker
 
 Il faut lancer MailBot qui contient le main
