@@ -20,7 +20,7 @@ Les classe pemettant de gérer la création du mail sont :
 Pour configManager il faut messages.utf8 pour les messages et victims.utf8 pour la liste des victimes
 
 Pour message.utf8
-  - Pour mettre un sujet il faut placer Subject: <le sujet> 
+  - Pour mettre un sujet il faut placer Subject: \<le sujet\> 
   - Ensuite écrire le body directement après et laissé une ligne vide pour la fin  
   - Ne lit pas les ligne vide
   
