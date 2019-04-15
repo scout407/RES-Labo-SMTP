@@ -5,7 +5,9 @@ import java.util.ArrayList;
 public class Group {
     private ArrayList<Victim> group;
 
-    public Group(){}
+    public Group(){
+        group = new ArrayList<Victim>();
+    }
 
     public Group(ArrayList<Victim> group){
         this.group = group;

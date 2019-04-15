@@ -30,8 +30,6 @@ public class SmtpClient implements SmtpClient_I {
         this.smtpServerPort = smtpServerport;
     }
 
-
-    @Override
     public void sendMail(EMail mail) throws IOException {
         LOG.info("Sending a message via SMTP protocol");
         Socket socket = new Socket(smtpServerAddress, smtpServerPort);
@@ -44,9 +42,8 @@ public class SmtpClient implements SmtpClient_I {
         line = bReader.readLine();
         LOG.info(line);
 
-        List<String> toAddresses = mail.getTo();
-        List<String> ccAddresses = mail.getCc();
-        List<String> bccAddresses = mail.getBcc();
+        ArrayList<String> toAddresses = mail.getTo();
+        ArrayList<String> ccAddresses = mail.getCc();
 
 
         // throw an error if we receive other message from server than 250
@@ -80,15 +77,7 @@ public class SmtpClient implements SmtpClient_I {
             }
         }
 
-		// Ajoute les adresse de en copie.
-        if(bccAddresses != null) {
-            for (String bcc : bccAddresses) {
-                pWriter.write("RCPT TO: " + bcc + endOfLine);
-                pWriter.flush();
-                line = bReader.readLine();
-                LOG.info(line);
-            }
-        }
+
 
 
         // Send Data
@@ -105,7 +94,8 @@ public class SmtpClient implements SmtpClient_I {
         }
         pWriter.write(endOfLine);
 
-        if(mail.getCc() != null){
+        if(ccAddresses != null && !ccAddresses.isEmpty()){
+            System.out.println(ccAddresses);
             pWriter.write("Cc: " + ccAddresses.get(0));
             for(int i = 1; i < ccAddresses.size(); ++i){
                 pWriter.write(", " + ccAddresses.get(i));
@@ -113,13 +103,7 @@ public class SmtpClient implements SmtpClient_I {
             pWriter.write(endOfLine);
         }
 
-        if(bccAddresses != null) {
-            pWriter.write("Bcc: " + bccAddresses.get(0));
-            for (int i = 1; i < bccAddresses.size(); ++i) {
-                pWriter.write(", " + bccAddresses.get(i));
-            }
-            pWriter.write(endOfLine);
-        }
+
 
         pWriter.write("Subject: " + mail.getSubject());
         pWriter.write(endOfLine + endOfLine);
