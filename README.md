@@ -1,7 +1,7 @@
 # RES-Labo-SMTP
 
-- Auteur: Bouyitiotis Stéphane, Flückiger Nathan
-- Aide  : Olivier Liechti
+- Auteur : Bouyiatiotis Stéphane, Flückiger Nathan
+- Aide   : Olivier Liechti
 
 # Description
 Dans ce dépos se trouve le laboratoire SMTP pour le cours de RES. 
